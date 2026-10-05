@@ -1,0 +1,12 @@
+source:
+  type: 1c
+  connection: "File=base.1cd"
+target:
+  type: postgres
+  dsn: "postgresql://user:pass@localhost/dwh"
+batch_size: 1000
+tables:
+  - name: documents
+    key: ref
+  - name: registers
+    key: recorder + period
